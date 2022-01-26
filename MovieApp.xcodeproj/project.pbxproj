@@ -26,7 +26,6 @@
 		D912217F26C745E7000FC4F0 /* TrailerApiManage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D912217E26C745E7000FC4F0 /* TrailerApiManage.swift */; };
 		D91A164526DDBF2300A342D2 /* LocalCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D91A164426DDBF2300A342D2 /* LocalCoreData.swift */; };
 		D93E44AB26DE150000B7CB5B /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E44AA26DE150000B7CB5B /* Favourite.swift */; };
-		D93E44AF26DE16FE00B7CB5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93E44AE26DE16FE00B7CB5B /* NetworkManager.swift */; };
 		D950730F26D2D61B004E0257 /* ReviewsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D950730E26D2D61B004E0257 /* ReviewsContent.swift */; };
 		D95D960F26CAC1B100A72A3D /* SingleFavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95D960E26CAC1B100A72A3D /* SingleFavouriteTableViewCell.swift */; };
 		D95DB08D26CD8CEC00ACAF3A /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95DB08C26CD8CEC00ACAF3A /* ReviewsViewController.swift */; };
@@ -59,7 +58,6 @@
 		D912217E26C745E7000FC4F0 /* TrailerApiManage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerApiManage.swift; sourceTree = "<group>"; };
 		D91A164426DDBF2300A342D2 /* LocalCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCoreData.swift; sourceTree = "<group>"; };
 		D93E44AA26DE150000B7CB5B /* Favourite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
-		D93E44AE26DE16FE00B7CB5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D950730E26D2D61B004E0257 /* ReviewsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsContent.swift; sourceTree = "<group>"; };
 		D95D960E26CAC1B100A72A3D /* SingleFavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		D95DB08C26CD8CEC00ACAF3A /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		D90CA40926C6D1E1003A2D91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D93E44AD26DE16D600B7CB5B /* NetworkManager */,
 				D91A164026DDB6CE00A342D2 /* DataBaseManager */,
 				D90CA40B26C6D202003A2D91 /* Pojo */,
 			);
@@ -230,14 +227,6 @@
 				D91A164426DDBF2300A342D2 /* LocalCoreData.swift */,
 			);
 			path = LocalDatabaseManage;
-			sourceTree = "<group>";
-		};
-		D93E44AD26DE16D600B7CB5B /* NetworkManager */ = {
-			isa = PBXGroup;
-			children = (
-				D93E44AE26DE16FE00B7CB5B /* NetworkManager.swift */,
-			);
-			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		D95DB09E26CD962A00ACAF3A /* Reviews */ = {
@@ -413,7 +402,6 @@
 				D90CA3ED26C6CF31003A2D91 /* AppDelegate.swift in Sources */,
 				D90CA41026C6D2A0003A2D91 /* Menu.swift in Sources */,
 				D95DB09026CD925900ACAF3A /* ReviewsApiManage.swift in Sources */,
-				D93E44AF26DE16FE00B7CB5B /* NetworkManager.swift in Sources */,
 				D95DB0A026CD963C00ACAF3A /* ReviewsMenu.swift in Sources */,
 				D912217726C7451E000FC4F0 /* TrailerMenu.swift in Sources */,
 				D90CA3F726C6CF31003A2D91 /* MovieApp.xcdatamodeld in Sources */,
