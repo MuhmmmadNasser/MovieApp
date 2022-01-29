@@ -1,4 +1,4 @@
-# MovieApp (ITI Graduated Summer cource)
+# MovieApp (ITI Graduated Summer course)
 View a set of films with (trailer, rate, release year, review)
 
 # Usage
