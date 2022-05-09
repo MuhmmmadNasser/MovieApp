@@ -13,6 +13,8 @@ import Cosmos
 
 class DetailsMovieViewController: UIViewController {
 
+    //MARK: - Outlets
+    
     @IBOutlet weak var movieNameLabel: UILabel!
     @IBOutlet weak var movieImg: UIImageView!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -23,6 +25,9 @@ class DetailsMovieViewController: UIViewController {
     @IBOutlet weak var overViewLabel: UILabel!
     
  
+    
+    //MARK: - Variables
+    
     var appDelegate: AppDelegate!
     var managedObjectContext: NSManagedObjectContext!
     
@@ -106,6 +111,23 @@ class DetailsMovieViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        //MARK: - Trailer *****************************************************************
+        
+        let apiTrailer: TrailerAPIProtocol = TrailerAPI()
+        apiTrailer.getTrailer(key: objMovie.id) { (result) in
+            
+            DispatchQueue.main.async {
+                switch result {
+                
+                case .success(let response):
+                    self.trailerArray = response?.results ?? []
+                    self.collectionView.reloadData()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        /*
         TrailerApiManage().fetchTrailerData(key: objMovie.id) { (fetchArr, error) in
             if let unwrappedArray = fetchArr{
                 
@@ -119,12 +141,34 @@ class DetailsMovieViewController: UIViewController {
                 print(unwrappedError)
             }
         }
+        */
         setupUi()
         
         
         //MARK: - REVIEWS *****************************************************************
-        ReviewsApiManage().fetchReviewsData(id: objMovie.id) { [self] (fetchReview, error) in
+        
+        let apiReview: ReviewsAPIProtocol = ReviewsAPI()
+        apiReview.ReviewsAPI(id: objMovie.id) { (result) in
             
+            var text = ""
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
+                    self.reviewArr = response?.results ?? []
+                    for item in self.reviewArr{
+                        text.append("\(item.author)\n")
+                        text.append("\(item.content)\n\n")
+                        self.reviewsTextView.text = text
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    
+        /*
+        ReviewsApiManage().fetchReviewsData(id: objMovie.id) { [self] (fetchReview, error) in
+        
             if let unwrapedFetchedArray = fetchReview{
                 
                 self.reviewArr = unwrapedFetchedArray
@@ -140,7 +184,9 @@ class DetailsMovieViewController: UIViewController {
             if let unwrapedError = error{
                 print(unwrapedError)
             }
-        }
+ 
+        }*/
+        
     }
     
     
